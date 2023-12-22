@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SmokeHouseApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SmokeHouseApp"
+    xmlns:homeView="clr-namespace:SmokeHouseApp.Views.Home"
+    xmlns:settingsView="clr-namespace:SmokeHouseApp.Views.Settings"
+    xmlns:sensorView="clr-namespace:SmokeHouseApp.Views.Sensor"
+    Shell.FlyoutBehavior="Disabled"
+    Title="SmokeHouseApp">
+
+    <TabBar x:Name="NavigationBar">
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate homeView:HomeMainView}"
+                          Route="Home"/>
+        </Tab>
+        <Tab Title="Sensor">
+            <ShellContent ContentTemplate="{DataTemplate sensorView:SensorMainView}"
+                          Route="Sensor"/>
+        </Tab>
+        <Tab Title="Settings">
+            <ShellContent ContentTemplate="{DataTemplate settingsView:SettingsMainView}"
+                          Route="Settings"/>
+        </Tab>
+    </TabBar>
+    <!--<ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />-->
+
+</Shell>
